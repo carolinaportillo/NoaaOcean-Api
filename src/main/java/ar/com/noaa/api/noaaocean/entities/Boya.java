@@ -2,6 +2,9 @@ package ar.com.noaa.api.noaaocean.entities;
 
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.*;
 
 
@@ -23,8 +26,8 @@ private double longitud;
 private double latitud;
 
 
-
 @OneToMany(mappedBy = "boya", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+@JsonIgnore
 private List<Muestra> muestras = new ArrayList();
 
 public Integer getBoyaId(){

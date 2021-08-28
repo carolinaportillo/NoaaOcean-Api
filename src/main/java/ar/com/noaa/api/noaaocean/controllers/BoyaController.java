@@ -1,5 +1,7 @@
 package ar.com.noaa.api.noaaocean.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +20,7 @@ public class BoyaController {
     @Autowired
     private BoyaService service;
 
-    @PostMapping("/api/boyas")
+    @PostMapping("/boyas")
     public ResponseEntity<GenericResponse> postCrearBoya(@RequestBody InfoBoyaNueva datosInstalacion){
 
         GenericResponse respuesta = new GenericResponse();
@@ -31,6 +33,14 @@ public class BoyaController {
 
         return ResponseEntity.ok(respuesta);
 
+    }
+
+
+
+    @GetMapping("/boyas")
+    public ResponseEntity<List<Boya>> getBoyas(){
+
+        return ResponseEntity.ok(service.obtenerBoyas());
     }
 
         

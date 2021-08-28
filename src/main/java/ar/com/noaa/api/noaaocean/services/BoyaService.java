@@ -1,5 +1,7 @@
 package ar.com.noaa.api.noaaocean.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +27,12 @@ public class BoyaService{
         boya.setLatitud(latitudInstalacion);
         boya.setLongitud(longitudInstalacion);
         return repo.save(boya);
+    }
+
+
+
+    public List<Boya> obtenerBoyas(){
+        return repo.findAll();
     }
         
     
