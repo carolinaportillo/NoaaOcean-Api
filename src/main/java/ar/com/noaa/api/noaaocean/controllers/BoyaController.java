@@ -43,8 +43,23 @@ public class BoyaController {
         return ResponseEntity.ok(service.obtenerBoyas());
     }
 
+
+
+    @GetMapping("/boyas/{id}")
+    public ResponseEntity<Boya> getBoyaPorId(@PathVariable Integer id){
+
+        return ResponseEntity.ok(service.obtenerBoyaPorId(id));
+    }
         
 
+
+
+
+
+
+
+
+    
    //crear boya
    //para crear una muestra si o si tengo que tener una boya
    //en el metodo crear muestra (primero tiene que haber una boya creada, istanciar una nueva muestra, traer el objeto boya por id Boya boya = serviceboya.fyndByBoyaid)

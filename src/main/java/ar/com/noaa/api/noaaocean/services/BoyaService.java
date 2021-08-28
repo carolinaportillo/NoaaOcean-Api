@@ -34,6 +34,12 @@ public class BoyaService{
     public List<Boya> obtenerBoyas(){
         return repo.findAll();
     }
+
+
+
+    public Boya obtenerBoyaPorId(Integer id) {
+        return repo.findByBoyaId(id);
+    }
         
     
 
