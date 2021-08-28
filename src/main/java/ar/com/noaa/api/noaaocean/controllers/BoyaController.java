@@ -23,7 +23,7 @@ public class BoyaController {
 
         GenericResponse respuesta = new GenericResponse();
         
-        Boya boya = service.crear(datosInstalacion.longitudInstalacion, datosInstalacion.latitudInstalacion);
+        Boya boya = service.crearBoya(datosInstalacion.longitudInstalacion, datosInstalacion.latitudInstalacion);
 
         respuesta.isOk = true;
         respuesta.message = "Se creo correctamente";

@@ -22,7 +22,6 @@ private double longitud;
 
 private double latitud;
 
-private String color;
 
 
 @OneToMany(mappedBy = "boya", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -68,13 +67,6 @@ public void setLatitud(double latitud) {
     this.latitud = latitud;
 }
 
-public String getColor() {
-    return color;
-}
-
-public void setColor(String color) {
-    this.color = color;
-}
 
 
 //relacion bidireccional (?)

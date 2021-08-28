@@ -20,7 +20,7 @@ public class BoyaService{
 
 
 
-    public Boya crear(double longitudInstalacion, double latitudInstalacion){
+    public Boya crearBoya(double longitudInstalacion, double latitudInstalacion){
         Boya boya =  new Boya();
         boya.setLatitud(latitudInstalacion);
         boya.setLongitud(longitudInstalacion);
