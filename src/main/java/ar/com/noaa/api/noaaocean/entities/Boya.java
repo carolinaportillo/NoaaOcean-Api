@@ -81,5 +81,31 @@ public void agregarMuestra(Muestra muestra){
 
 
 
+/* forma alternativa planteada para trabajar los colores de boya
+public enum ColorLuzBoyaEnum {
+    ROJO(1), VERDE(2), AZUL(3), AMARILLO(4);
+
+    private final Integer value;
+
+    private ColorLuzBoyaEnum(Integer value) {
+        this.value = value;
+    }
+
+    public Integer getValue() {
+        return value;
+    }
+
+    public static ColorLuzBoyaEnum parse(Integer id) {
+        ColorLuzBoyaEnum status = null; 
+        for (ColorLuzBoyaEnum item : ColorLuzBoyaEnum.values()) {
+            if (item.getValue().equals(id)) {
+                status = item;
+                break;
+            }
+        }
+        return status;
+    }
+    }*/
+
     
 }
