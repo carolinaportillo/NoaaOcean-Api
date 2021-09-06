@@ -47,6 +47,7 @@ public class Muestra {
 
     public void setBoya(Boya boya) {
         this.boya = boya;
+        this.boya.agregarMuestra(this); //RB establecida con el metodo creado en boya.java
     }
 
     public Date getHorarioMuestra() {

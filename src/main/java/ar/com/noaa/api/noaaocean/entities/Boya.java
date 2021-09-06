@@ -72,13 +72,26 @@ public void setLatitud(double latitud) {
 
 
 
-//relacion bidireccional (?)
+//relacion bidireccional
 public void agregarMuestra(Muestra muestra){
     this.muestras.add(muestra);
-    muestra.setBoya(this);
 }
-//llamar cuando cree la muestra 
 
+
+
+
+
+
+
+
+
+
+
+/*metodo de rb alternativa, este si o si se tiene que llamar al momento de crear una muestra
+public void agregarMuestra(Muestra muestra){
+   this.muestras.add(muestra);
+   muestra.setBoya(this);
+ }*/
 
 
 /* forma alternativa planteada para trabajar los colores de boya
