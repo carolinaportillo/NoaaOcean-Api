@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import ar.com.noaa.api.noaaocean.entities.Boya;
 import ar.com.noaa.api.noaaocean.entities.Muestra;
+import ar.com.noaa.api.noaaocean.repos.BoyaRepository;
 import ar.com.noaa.api.noaaocean.repos.MuestraRepository;
 
 @Service
@@ -56,6 +57,16 @@ public class MuestraService{
         return (boya.getMuestras());
     }
     
+
+    public void eliminarMuestraYResetearLuzDeBoya(Integer id){
+       //buscar boya por muestra id
+        Muestra muestra = repo.findByMuestraId(id);
+        //actualizo el color de la boya de ESA muestra
+        Boya boya = muestra.getBoya();
+        boya.setColorLuz("AZUL");
+        //elimino la muestra en la bd
+        repo.deleteById(id);
+    }
 
 
 

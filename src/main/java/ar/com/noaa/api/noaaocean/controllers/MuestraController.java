@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ar.com.noaa.api.noaaocean.entities.Muestra;
 import ar.com.noaa.api.noaaocean.models.request.InfoMuestraNueva;
+import ar.com.noaa.api.noaaocean.models.response.GenericResponse;
 import ar.com.noaa.api.noaaocean.models.response.MuestraResponse;
 import ar.com.noaa.api.noaaocean.services.MuestraService;
 
@@ -44,6 +46,18 @@ public class MuestraController{
         
         return ResponseEntity.ok(service.obtenerMuestrasPorBoyaId(idBoya));
     }
-    
+
+
+    @DeleteMapping("/muestras/{id}")
+    public ResponseEntity<GenericResponse> eliminarMuestraPorId(@PathVariable Integer id){
+        GenericResponse respuesta = new GenericResponse();
+
+        service.eliminarMuestraYResetearLuzDeBoya(id);
+        
+        respuesta.isOk = true;
+        respuesta.message = "La muestra se ha eliminado correctamente, la luz de boya ahora es AZUL";
+        
+        return ResponseEntity.ok(respuesta);
+    }
 
 }

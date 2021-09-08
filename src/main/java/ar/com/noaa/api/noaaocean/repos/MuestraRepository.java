@@ -10,5 +10,7 @@ import ar.com.noaa.api.noaaocean.entities.Muestra;
 
 @Repository
 public interface MuestraRepository extends JpaRepository<Muestra, Integer>{
+
+    Muestra findByMuestraId(Integer id);
     
 }
