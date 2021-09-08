@@ -1,6 +1,9 @@
 package ar.com.noaa.api.noaaocean.entities;
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.*;
 
 @Entity
@@ -12,7 +15,7 @@ public class Muestra {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer muestraId;
 
-
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "boya_id", referencedColumnName = "boya_id")
     private Boya boya;

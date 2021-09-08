@@ -1,6 +1,7 @@
 package ar.com.noaa.api.noaaocean.services;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -46,6 +47,15 @@ public class MuestraService{
         return repo.save(muestra);
     
     }
+
+    public List<Muestra> obtenerMuestrasPorBoyaId(Integer idBoya){
+
+        //buscar boya por id
+        Boya boya = serviceBoya.obtenerBoyaPorId(idBoya);
+        //retornar la lista de muestras de esa boya
+        return (boya.getMuestras());
+    }
+    
 
 
 
