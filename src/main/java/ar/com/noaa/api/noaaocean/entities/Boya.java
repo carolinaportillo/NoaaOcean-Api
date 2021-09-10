@@ -21,9 +21,9 @@ private Integer boyaId;
 @Column(name = "color_luz")
 private String colorLuz;
 
-private double longitud;
+private Double longitud;
 
-private double latitud;
+private Double latitud;
 
 
 @OneToMany(mappedBy = "boya", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -54,19 +54,19 @@ public void setColorLuz(String colorLuz) {
     this.colorLuz = colorLuz;
 }
 
-public double getLongitud() {
+public Double getLongitud() {
     return longitud;
 }
 
-public void setLongitud(double longitud) {
+public void setLongitud(Double longitud) {
     this.longitud = longitud;
 }
 
-public double getLatitud() {
+public Double getLatitud() {
     return latitud;
 }
 
-public void setLatitud(double latitud) {
+public void setLatitud(Double latitud) {
     this.latitud = latitud;
 }
 

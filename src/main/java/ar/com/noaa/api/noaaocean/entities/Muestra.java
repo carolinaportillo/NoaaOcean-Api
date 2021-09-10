@@ -27,14 +27,14 @@ public class Muestra {
     private String matricula;
 
     @Column(name = "longitud_actualb")
-    private double longitudActualBoya;
+    private Double longitudActualBoya;
     
 
     @Column(name = "latitud_actualb")
-    private double latitudActualBoya;
+    private Double latitudActualBoya;
 
     @Column(name = "altura_nvmar")
-    private double alturaAlNivelDelMar;
+    private Double alturaAlNivelDelMar;
 
     public Integer getMuestraId() {
         return muestraId;
@@ -69,27 +69,27 @@ public class Muestra {
         this.matricula = matricula;
     }
 
-    public double getLongitudActualBoya() {
+    public  Double getLongitudActualBoya() {
         return longitudActualBoya;
     }
 
-    public void setLongitudActualBoya(double longitudActualBoya) {
+    public void setLongitudActualBoya(Double longitudActualBoya) {
         this.longitudActualBoya = longitudActualBoya;
     }
 
-    public double getLatitudActualBoya() {
+    public Double getLatitudActualBoya() {
         return latitudActualBoya;
     }
 
-    public void setLatitudActualBoya(double latitudActualBoya) {
+    public void setLatitudActualBoya(Double latitudActualBoya) {
         this.latitudActualBoya = latitudActualBoya;
     }
 
-    public double getAlturaAlNivelDelMar() {
+    public Double getAlturaAlNivelDelMar() {
         return alturaAlNivelDelMar;
     }
 
-    public void setAlturaAlNivelDelMar(double alturaAlNivelDelMar) {
+    public void setAlturaAlNivelDelMar(Double alturaAlNivelDelMar) {
         this.alturaAlNivelDelMar = alturaAlNivelDelMar;
     }
     

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ar.com.noaa.api.noaaocean.entities.Muestra;
 import ar.com.noaa.api.noaaocean.models.request.InfoMuestraNueva;
+import ar.com.noaa.api.noaaocean.models.response.ColorMuestraResponse;
 import ar.com.noaa.api.noaaocean.models.response.GenericResponse;
 import ar.com.noaa.api.noaaocean.models.response.MuestraResponse;
 import ar.com.noaa.api.noaaocean.services.MuestraService;
@@ -59,5 +60,25 @@ public class MuestraController{
         
         return ResponseEntity.ok(respuesta);
     }
+
+   /* GET /muestras/colores/{color} : que devuelva la lista de muestras de un color en el siguiente 
+   formato JSON Array:
+    [{
+   “boyaId”: 1232,
+   “horario”: “2020-08-05T20:20:10”,
+   “alturaNivelDelMar”: 29
+    },
+    {
+    “boyaId”: 124,
+    “horario”: “2020-08-01T20:22:10”,
+    “alturaNivelDelMar”: 55
+    }]*/
+
+    @GetMapping("/muestras/colores/{color}")
+    public ResponseEntity<List<ColorMuestraResponse>> traerMuestrasPorColor(@PathVariable String color){
+        
+        return ResponseEntity.ok(service.obtenerListaDeMuestrasPorColor(color));
+    }
+
 
 }
