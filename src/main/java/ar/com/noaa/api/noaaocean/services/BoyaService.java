@@ -16,12 +16,6 @@ public class BoyaService{
 
 
 
-    public void crear(Boya boya){
-        repo.save(boya);
-    }
-
-
-
     public Boya crearBoya(double longitudInstalacion, double latitudInstalacion){
         Boya boya =  new Boya();
         boya.setLatitud(latitudInstalacion);
@@ -41,7 +35,17 @@ public class BoyaService{
         return repo.findByBoyaId(id);
     }
         
+
+    public void actualizarBoya(Boya boya){
+        repo.save(boya);
+    }
     
+    /*public void actualizarColorBoya(Integer id, String color){
+
+       Boya boya = repo.findByBoyaId(id);
+       boya.setColorLuz(color);
+       repo.save(boya);
+    }*/
 
     
 }

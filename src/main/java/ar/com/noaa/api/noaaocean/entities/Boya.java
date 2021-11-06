@@ -21,9 +21,9 @@ private Integer boyaId;
 @Column(name = "color_luz")
 private String colorLuz;
 
-private double longitud;
+private Double longitud;
 
-private double latitud;
+private Double latitud;
 
 
 @OneToMany(mappedBy = "boya", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -54,32 +54,71 @@ public void setColorLuz(String colorLuz) {
     this.colorLuz = colorLuz;
 }
 
-public double getLongitud() {
+public Double getLongitud() {
     return longitud;
 }
 
-public void setLongitud(double longitud) {
+public void setLongitud(Double longitud) {
     this.longitud = longitud;
 }
 
-public double getLatitud() {
+public Double getLatitud() {
     return latitud;
 }
 
-public void setLatitud(double latitud) {
+public void setLatitud(Double latitud) {
     this.latitud = latitud;
 }
 
 
 
-//relacion bidireccional (?)
+//relacion bidireccional
 public void agregarMuestra(Muestra muestra){
     this.muestras.add(muestra);
-    muestra.setBoya(this);
 }
-//llamar cuando cree la muestra 
 
 
+
+
+
+
+
+
+
+
+
+/*metodo de rb alternativa, este si o si se tiene que llamar al momento de crear una muestra
+public void agregarMuestra(Muestra muestra){
+   this.muestras.add(muestra);
+   muestra.setBoya(this);
+ }*/
+
+
+/* forma alternativa planteada para trabajar los colores de boya
+public enum ColorLuzBoyaEnum {
+    ROJO(1), VERDE(2), AZUL(3), AMARILLO(4);
+
+    private final Integer value;
+
+    private ColorLuzBoyaEnum(Integer value) {
+        this.value = value;
+    }
+
+    public Integer getValue() {
+        return value;
+    }
+
+    public static ColorLuzBoyaEnum parse(Integer id) {
+        ColorLuzBoyaEnum status = null; 
+        for (ColorLuzBoyaEnum item : ColorLuzBoyaEnum.values()) {
+            if (item.getValue().equals(id)) {
+                status = item;
+                break;
+            }
+        }
+        return status;
+    }
+    }*/
 
     
 }
