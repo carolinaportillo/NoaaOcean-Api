@@ -71,35 +71,6 @@ public class MuestraService{
     }
 
 
-    /*public Serie buscarSerieV2(String nombreABuscar) {
-        Serie serieBuscada = null;
-        //En este caso se recorre TODO(aunque haya 1000 series)
-        //y al final se devuelve si encontr una serie.
-        //en el caso anterior, se devuelve una vez encontrada.
-        //ej si hay 1000 series pero esta en la posicion 3, hace 3 vueltas
-        for (Serie serie : this.series) {
-            if (serie.getNombre().equals(nombreABuscar))
-                serieBuscada = serie;
-        }
-        return serieBuscada;
-        /*if (serieBuscada == null)
-            return null;
-        else
-            return serieBuscada;*/
-
-
-    /*public List<Empleada> obtenerSueldosActualesNoStream() {
-        List<Empleada> listaEmpleadas = new ArrayList<>();
-
-        for (Categoria categoria : this.traerCategorias()) {
-            for (Empleada empleada : categoria.getEmpleadas()) {
-                listaEmpleadas.add(empleada);
-            }
-        }
-
-        return listaEmpleadas;
-    }*/
-
 
     public List<ColorMuestraResponse> obtenerListaDeMuestrasPorColor(String color){
         

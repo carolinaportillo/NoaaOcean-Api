@@ -72,21 +72,6 @@ public class BoyaController {
         return ResponseEntity.ok(respuesta);
     }
         
-
-
-
-
-
-
-
-
-    
-   //crear boya
-   //para crear una muestra si o si tengo que tener una boya
-   //en el metodo crear muestra (primero tiene que haber una boya creada, istanciar una nueva muestra, traer el objeto boya por id Boya boya = serviceboya.fyndByBoyaid)
-   //service boya buscar boya por id, parametro Integer id(repo.findByBoyaId)
-   // llamo al metodo bd muestra.agregarMuestra
-   // repo.save(muestra)
         
     
 }

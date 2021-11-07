@@ -61,18 +61,7 @@ public class MuestraController{
         return ResponseEntity.ok(respuesta);
     }
 
-   /* GET /muestras/colores/{color} : que devuelva la lista de muestras de un color en el siguiente 
-   formato JSON Array:
-    [{
-   “boyaId”: 1232,
-   “horario”: “2020-08-05T20:20:10”,
-   “alturaNivelDelMar”: 29
-    },
-    {
-    “boyaId”: 124,
-    “horario”: “2020-08-01T20:22:10”,
-    “alturaNivelDelMar”: 55
-    }]*/
+
 
     @GetMapping("/muestras/colores/{color}")
     public ResponseEntity<List<ColorMuestraResponse>> traerMuestrasPorColor(@PathVariable String color){
