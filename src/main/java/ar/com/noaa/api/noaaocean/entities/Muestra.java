@@ -15,7 +15,7 @@ public class Muestra {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer muestraId;
 
-    @JsonIgnore
+    //@JsonIgnore
     @ManyToOne
     @JoinColumn(name = "boya_id", referencedColumnName = "boya_id")
     private Boya boya;

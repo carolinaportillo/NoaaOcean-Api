@@ -56,7 +56,7 @@ public class MuestraService{
         //buscar boya por id
         Boya boya = serviceBoya.obtenerBoyaPorId(idBoya);
         //retornar la lista de muestras de esa boya
-        return (boya.getMuestras());
+        return boya.getMuestras();
     }
     
 
